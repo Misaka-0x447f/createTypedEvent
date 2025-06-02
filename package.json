@@ -47,8 +47,8 @@
     "inquirer-file-selector": "^0.6.2",
     "inquirer-file-tree-selection-prompt": "^2.0.5",
     "inquirer-fs-selector": "^1.5.0",
+    "np": "^10.2.0",
     "react": "^19.1.0",
-    "release-it": "^19.0.3",
     "tsup": "^8.5.0",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
