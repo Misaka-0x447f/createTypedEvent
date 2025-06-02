@@ -1,0 +1,48 @@
+{
+  "name": "@misaka17535/create-typed-event",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsup",
+    "test:link": "pnpm link",
+    "test:pack": "tsx ./install-test.ts"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./react": {
+      "import": "./dist/react.mjs",
+      "require": "./dist/react.js"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "pnpm": ">=7.0.0"
+  },
+  "packageManager": "pnpm",
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.15.29",
+    "@types/prompts": "^2.4.9",
+    "@types/react": "^19.1.6",
+    "esbuild": "0.25.5",
+    "inquirer": "^12.6.3",
+    "inquirer-file-selector": "^0.6.2",
+    "inquirer-file-tree-selection-prompt": "^2.0.5",
+    "inquirer-fs-selector": "^1.5.0",
+    "react": "^19.1.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  }
+}
