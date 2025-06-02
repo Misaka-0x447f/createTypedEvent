@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsup",
     "test:link": "pnpm link ./dist",
-    "release": "tsup && cp ./package.json ./dist/package.json && cd ./dist && release-it"
+    "release": "tsup && cp ./package.json ./dist/package.json && np --contents=./dist"
   },
   "main": "index.js",
   "module": "index.mjs",
@@ -48,6 +48,7 @@
     "inquirer-file-tree-selection-prompt": "^2.0.5",
     "inquirer-fs-selector": "^1.5.0",
     "react": "^19.1.0",
+    "release-it": "^19.0.3",
     "tsup": "^8.5.0",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
