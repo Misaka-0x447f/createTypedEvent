@@ -5,8 +5,7 @@
   "scripts": {
     "build": "tsup",
     "test:link": "pnpm link ./dist",
-    "release": "tsup && np --contents=./dist --no-tests",
-    "prepublishOnly": "cp ./package.json ./dist/package.json"
+    "release": "tsup && np --contents=./dist --no-tests --no-publish && cp ./package.json ./dist/package.json && npm publish"
   },
   "main": "index.js",
   "module": "index.mjs",
