@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsup",
     "test:link": "pnpm link ./dist",
-    "release": "tsup && cp ./package.json ./dist/package.json && np --contents=./dist"
+    "release": "tsup && cp ./package.json ./dist/package.json && np --contents=./dist --no-tests"
   },
   "main": "index.js",
   "module": "index.mjs",
