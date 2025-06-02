@@ -27,7 +27,7 @@
     "typescript",
     "functional"
   ],
-  "author": "",
+  "author": "misaka_0x447f",
   "license": "MIT",
   "engines": {
     "pnpm": ">=7.0.0"
@@ -53,5 +53,13 @@
   },
   "dependencies": {
     "lodash-es": "^4.17.21"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Misaka-0x447f/createTypedEvent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Misaka-0x447f/createTypedEvent/issues"
+  },
+  "homepage": "https://github.com/Misaka-0x447f/createTypedEvent#readme"
 }
