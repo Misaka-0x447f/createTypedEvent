@@ -21,7 +21,7 @@
  * eventBus.bob.dispatch({isE2eEncryption: true})
  *
  * @member sub      Subscribe to event. Returns an unsub method that does not require original callback.
- * @member unsub    Unsubscribe to event. Require original callback.
+ * @member unsub    Unsubscribe to event. No original callback required.
  * @member dispatch Simply dispatch payload to every subscriber.
  * @member once     Only subscribe once.
  * @member value    Get the latest value.
@@ -29,7 +29,7 @@
  * @param dispatchLastValueOnSubscribe If true, dispatch last value to new subscriber.
  *
  * @member sub     订阅事件。返回一个取消订阅方法，以便在不需要原始回调函数的情况下取消订阅。
- * @member unsub   取消订阅事件。需要原始回调。
+ * @member unsub   取消订阅事件。可以不要原始回调函数。
  * @member dispatch 仅将 payload 分发给每个订阅者。
  * @member once    仅订阅一次。
  * @member value   获取最新的值。
