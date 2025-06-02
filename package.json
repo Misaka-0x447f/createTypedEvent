@@ -4,19 +4,20 @@
   "description": "Function-based and directive tiny typed event, with current value and optional react hook. Proven and well-tested in private projects. 全功能、函数式调用的微型事件库，可读取当前值且带有可选 react hook。在内部项目中久经考验。",
   "scripts": {
     "build": "tsup",
-    "test:link": "pnpm link"
+    "test:link": "pnpm link ./dist",
+    "release": "release-it ./dist"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./index.mjs",
+      "require": "./index.js"
     },
     "./react": {
-      "import": "./dist/react.mjs",
-      "require": "./dist/react.js"
+      "import": "./react.mjs",
+      "require": "./react.js"
     }
   },
   "keywords": [
