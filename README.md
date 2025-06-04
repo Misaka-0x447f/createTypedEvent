@@ -12,9 +12,11 @@ Proven and well-tested in private projects.
   - Its Objective: requires you to create an Observable/Subject object.
   - Way much larger package size: rxjs@7.8.2 itself takes 4.29MB, while this library only takes 12.5KB (can be smaller in the future).
 - mitt
-  - requires you to write event name: `emitter.on('xxx'...`
-  - does not return an unsub method.
-  - does not support getting current value.
+  - Requires you to write event name: `emitter.on('xxx'...`
+  - Does not return an unsub method.
+  - Does not support getting current value.
+- so many others
+  - Almost every library I know requires you to write event name on subscription, and cannot auto-complete.
 
 - rxjs
   - 面向对象：需要你创建一个 Observable/Subject 对象。
@@ -23,6 +25,8 @@ Proven and well-tested in private projects.
   - 需要你写事件名：`emitter.on('xxx'...`
   - 不返回取消订阅方法。
   - 不支持获取当前值。
+- 其他库
+  - 几乎每个我知道的库都需要你在订阅时写事件名，且无法做到自动补全。 
 
 ## Examples
 
