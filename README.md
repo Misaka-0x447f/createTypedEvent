@@ -5,7 +5,24 @@
 A modern eventManager, bridging vanilla-js and reactive frameworks, with types to prevent errors.  
 Proven and well-tested in private projects.  
 更现代的事件管理器，打通原生 js 和响应式框架的桥梁，同时具备内建 payload 类型机制以减少错误和帮助自动填充。  
-在内部项目中久经考验。  
+在内部项目中久经考验。
+
+## Compared to others
+- rxjs
+  - Its Objective: requires you to create an Observable/Subject object.
+  - Way much larger package size: rxjs@7.8.2 itself takes 4.29MB, while this library only takes 12.5KB (can be smaller in the future).
+- mitt
+  - requires you to write event name: `emitter.on('xxx'...`
+  - does not return an unsub method.
+  - does not support getting current value.
+
+- rxjs
+  - 面向对象：需要你创建一个 Observable/Subject 对象。
+  - 包体积很大：rxjs@7.8.2 本身就有 4.29MB，而这个库只有 12.5KB（未来可能会更小）。
+- mitt
+  - 需要你写事件名：`emitter.on('xxx'...`
+  - 不返回取消订阅方法。
+  - 不支持获取当前值。
 
 ## Examples
 
