@@ -39,6 +39,11 @@ eventBus.bob.dispatch({isE2eEncryption: true})
 ```
 `>>> { isE2eEncryption: true }`
 
+## React hook
+
+```typescript
+const [marketPrice, setMarketPrice, marketPriceRef] = useTypedEventValue(marketPriceUpdateEvent);
+```
 
 ## API
 
