@@ -58,8 +58,8 @@ export const createTypedEvent = <T = void>({
             cbs.splice(index, 1);
         },
         dispatch: (payload: T) => {
-            cbs.map(v => v(payload));
             history[0] = payload;
+            cbs.map(v => v(payload));
         },
         once: (cb: cb<T>) => {
             instance.sub((arg: T) => {
