@@ -58,6 +58,8 @@ export const createTypedEvent = <T = void>({
             cbs.splice(index, 1);
         },
         dispatch: (payload: T) => {
+            // history update must go before callbacks,
+            // to ensure callbacks can get the latest value
             history[0] = payload;
             cbs.map(v => v(payload));
         },
