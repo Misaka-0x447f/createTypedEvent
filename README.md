@@ -1,5 +1,7 @@
 # createTypedEvent
 
+[![npm version](https://img.shields.io/npm/v/@misaka17535/create-typed-event.svg)](https://www.npmjs.com/package/@misaka17535/create-typed-event)
+
 A modern eventManager, bridging vanilla-js and reactive frameworks, with types to prevent errors.  
 Proven and well-tested in private projects.  
 更现代的事件管理器，打通原生 js 和响应式框架的桥梁，同时具备内建 payload 类型机制以减少错误和帮助自动填充。  
