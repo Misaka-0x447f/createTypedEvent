@@ -19,9 +19,6 @@ const main = async () => {
     console.log('复制 README.md 文件...');
     fs.copyFileSync(readmePath, distReadmePath);
 
-    const distDir = path.resolve(__dirname, 'dist');
-    process.chdir(distDir);
-
     // 按任意键确认发布
     const waitForAnyKey = async () => {
         console.log('按任意键以确认发布...');
@@ -43,6 +40,9 @@ const main = async () => {
     };
 
     await waitForAnyKey();
+
+    const distDir = path.resolve(__dirname, 'dist');
+    process.chdir(distDir);
 
     // 发布到 npm
     console.log('正在发布...');
