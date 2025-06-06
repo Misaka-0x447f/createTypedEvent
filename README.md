@@ -95,6 +95,3 @@ const [marketPrice, setMarketPrice, marketPriceRef] = useTypedEventValue(marketP
 - **dispatchLastValueOnSubscribe**  
   If true, dispatch last value to new subscriber.  
   是否在初始订阅时分发上次的值。
-
-## Release
-To release, use release-it.
