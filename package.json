@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsup",
     "test:link": "pnpm link ./dist",
-    "release": "tsx ./release.ts"
+    "release": "tsx ./scripts/release.ts",
+    "postversion": "tsx ./scripts/copyRequiredFilesToDist.ts"
   },
   "main": "index.js",
   "module": "index.mjs",
