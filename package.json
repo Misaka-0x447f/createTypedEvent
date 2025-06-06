@@ -12,14 +12,14 @@
   "types": "index.d.ts",
   "exports": {
     ".": {
-      "default": "./index.js",
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "default": "./index.js"
     },
     "./react": {
-      "default": "./index.js",
       "import": "./react.mjs",
-      "require": "./react.js"
+      "require": "./react.js",
+      "default": "./react.js"
     }
   },
   "keywords": [
