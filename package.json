@@ -1,6 +1,6 @@
 {
   "name": "@misaka17535/create-typed-event",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Function-based and directive tiny typed event, with current value and optional react hook. Proven and well-tested in private projects. 全功能、函数式调用的微型事件库，可读取当前值且带有可选 react hook。在内部项目中久经考验。",
   "scripts": {
     "build": "tsup",
