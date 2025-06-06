@@ -2,10 +2,10 @@
 
 [![npm version](https://img.shields.io/npm/v/@misaka17535/create-typed-event.svg)](https://www.npmjs.com/package/@misaka17535/create-typed-event)
 
+English | [中文](https://github.com/Misaka-0x447f/createTypedEvent/wiki/%E4%B8%AD%E6%96%87-README)
+
 A modern eventManager, bridging vanilla-js and reactive frameworks, with types to prevent errors.  
-Proven and well-tested in private projects.  
-更现代的事件管理器，打通原生 js 和响应式框架的桥梁，同时具备内建 payload 类型机制以减少错误和帮助自动填充。  
-在内部项目中久经考验。
+Proven and well-tested in private projects.
 
 ## Compared to others
 - rxjs
@@ -18,19 +18,13 @@ Proven and well-tested in private projects.
 - so many others
   - Almost every library I know requires you to write event name on subscription, and cannot auto-complete.
 
-- rxjs
-  - 面向对象：需要你创建一个 Observable/Subject 对象。
-  - 包体积很大：rxjs@7.8.2 本身就有 4.29MB，而这个库只有 12.5KB（未来可能会更小）。
-- mitt
-  - 需要你写事件名：`emitter.on('xxx'...`
-  - 不返回取消订阅方法。
-  - 不支持获取当前值。
-- 其他库
-  - 几乎每个我知道的库都需要你在订阅时写事件名，且无法做到自动补全。 
-
 ## Examples
 
+Traditional unsubscribe:
+
 ```typescript
+import { createTypedEvent } from '@misaka17535/create-typed-event'
+
 type Payload = { ready: boolean }
 const networkStateChange = createTypedEvent<Payload>()
 
@@ -41,8 +35,11 @@ networkStateChange.unsub(handler)
 ```
 `>>> { ready: true }`
 
+Simplified unsubscribe:
 
 ```typescript
+import { createTypedEvent } from '@misaka17535/create-typed-event'
+
 const misakaStateChange = createTypedEvent<{ selfDestructionInProgress: boolean }>()
 const unsub = misakaStateChange.sub((payload) => console.log(payload)) // returns unsub function without defining handler outside
 misakaStateChange.dispatch({selfDestructionInProgress: true})
@@ -50,48 +47,64 @@ unsub()
 ```
 `>>> { selfDestructionInProgress: true }`
 
+Create an "event bus":
 
 ```typescript
+import { createTypedEvent } from '@misaka17535/create-typed-event'
+
 export const eventBus = {
     alice: createTypedEvent(),
     bob: createTypedEvent<{ isE2eEncryption: boolean }>()
 }
 eventBus.bob.dispatch({isE2eEncryption: true})
 ```
-`>>> { isE2eEncryption: true }`
 
-## React hook
+Supports react hook:
 
 ```typescript
+import { createTypedEventMemorized } from '@misaka17535/create-typed-event/react'
+const marketPriceUpdateEvent = createTypedEventMemorized<number>();
+
+import { useTypedEventValue } from '@misaka17535/create-typed-event/react'
 const [marketPrice, setMarketPrice, marketPriceRef] = useTypedEventValue(marketPriceUpdateEvent);
 ```
 
 ## API
 
-### Methods
+#### `import { createTypedEvent, type TypedEvent } from '@misaka17535/create-typed-event'`
 
-- **sub**  
-  Subscribe to event. Returns an unsub method that does not require original callback.  
-  订阅事件。返回一个取消订阅方法，以便在不需要原始回调函数的情况下取消订阅。
+- `type TypedEvent<Payload>`
+  - The type that "createTypedEvent" returns.
 
-- **unsub**  
-  Unsubscribe to event. No parameters.  
-  取消订阅事件。无需参数。
+- `createTypedEvent<Payload>(dispatchLastValueOnSubscribe?: boolean): TypedEvent<Payload>`
+  Create a new event unit.  
+  - Parameter
+    - `dispatchLastValueOnSubscribe`
+      optional, default to `false`.  
+      If `dispatchLastValueOnSubscribe` is true, it will dispatch the last value to new subscribers.
+  - Returns an object with the following:
+    - `sub(callback: (payload: Payload) => void): () => void`  
+      Subscribe to event. Returns an unsub method that does not require original callback.
+    - `unsub(callback: (payload: Payload) => void): void`
+      Unsubscribe from event with the original callback.
+    - `dispatch(payload: Payload): void`  
+      Dispatch an event with the given payload.
+    - `once(callback: (payload: Payload) => void): () => void`  
+      Subscribe to event, but only once. Returns an unsub method that does not require original callback.
+    - `get value(): Payload | undefined`  
+      A [getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) to get the current value of the event.
 
-- **dispatch**  
-  Simply dispatch payload to every subscriber.  
-  将 payload 分发给每个订阅者。
+---
 
-- **once**  
-  Only subscribe once.  
-  仅订阅一次。
-
-- **value**  
-  Get the latest value. Useful when bridging to reactive frameworks.
-  获取最新的值。这在将其用作响应式框架桥梁时很有用。
-
-### Parameters
-
-- **dispatchLastValueOnSubscribe**  
-  If true, dispatch last value to new subscriber.  
-  是否在初始订阅时分发上次的值。
+#### `import { useTypedEvent, createTypedEventMemorized } from '@misaka17535/create-typed-event/react'`
+  - `useTypedEvent(event: TypedEvent): HybridState`
+    Use typed event as a React state.
+    - Returns a tuple of:
+      - `value: Payload | undefined`  
+        The current value of the event.
+      - `setValue: (payload: Payload) => void`  
+        A function to set the value of the event.
+      - `ref: React.MutableRefObject<Payload | undefined>`  
+        A `ref` that holds the current value of the event, useful for accessing the latest value in effects or callbacks.
+  - `createTypedEventMemorized<Payload>(dispatchLastValueOnSubscribe?: boolean)`
+    Create `TypedEvent` within react component. Parameters and returns are the same as `createTypedEvent`.
