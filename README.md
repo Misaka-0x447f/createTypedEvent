@@ -1,4 +1,4 @@
-# createTypedEvent
+# create-typed-event
 
 [![npm version](https://img.shields.io/npm/v/@misaka17535/create-typed-event.svg)](https://www.npmjs.com/package/@misaka17535/create-typed-event)
 
@@ -10,13 +10,25 @@ Proven and well-tested in private projects.
 ## Compared to others
 - rxjs
   - Its Objective: requires you to create an Observable/Subject object.
-  - Way much larger package size: rxjs@7.8.2 itself takes 4.29MB, while this library only takes 12.5KB (can be smaller in the future).
+  - Way much larger package size and more complex API.
 - mitt
-  - Requires you to write event name: `emitter.on('xxx'...`
+  - Requires you to write event name just like node.js does: `emitter.on('xxx'...`
   - Does not return an unsub method.
   - Does not support getting current value.
+- valtio
+  - A good solution, but powered by Proxy, which is not really efficient and not working with some type: `type SnapshotIgnore =
+  | Date
+  | Map<any, any>
+  | Set<any>
+  | WeakMap<any, any>
+  | WeakSet<any>
+  | Error
+  | RegExp
+  | AnyFunction
+  | Primitive`
 - so many others
   - Almost every library I know requires you to write event name on subscription, and cannot auto-complete.
+  - So I trust the solution I made can be unique and useful.
 
 ## Examples
 

@@ -26,6 +26,7 @@
   "keywords": [
     "typed-event",
     "event",
+    "emitter",
     "react",
     "hook",
     "typescript",
