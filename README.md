@@ -16,16 +16,7 @@ Proven and well-tested in private projects.
   - Does not return an unsub method.
   - Does not support getting current value.
 - valtio
-  - A good solution, but powered by Proxy, which is not really efficient and not working with some type: `type SnapshotIgnore =
-  | Date
-  | Map<any, any>
-  | Set<any>
-  | WeakMap<any, any>
-  | WeakSet<any>
-  | Error
-  | RegExp
-  | AnyFunction
-  | Primitive`
+  - A good solution, but powered by Proxy, which is not really efficient and not working with complex object.
 - so many others
   - Almost every library I know requires you to write event name on subscription, and cannot auto-complete.
   - So I trust the solution I made can be unique and useful.
