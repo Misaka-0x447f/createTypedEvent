@@ -12,7 +12,27 @@ Proven and well-tested in private projects.
 
 Project history on gist: https://gist.github.com/Misaka-0x447f/0c37018ae7bd944cbff54d27b6d4fd9f
 
-## Compared to others
+## Compares
+
+|                  | typed | easy to use | perf    | autocomplete | one call unsub | no React | latestValue |
+|--------------------|------------|---------|-------|------|--------|------------|----------|
+| create-typed-event | ✅          | ✅       | ✅     | ✅    | ✅      | ✅          | ✅        |
+| redux              | *️⃣ 1      | ❌       | *️⃣ 5 | ✅    | ✅      | ✅          | ✅        |
+| mitt               | *️⃣ 2      | ✅       | ✅     | ❌    | ❌      | ✅          | ❌        |
+| jotai              | ✅          | *️⃣ 3   | ✅     | ✅    | ✅      | ❌          | *️⃣ 8    |
+| valtio             | ✅          | *️⃣ 4   | *️⃣ 6 | ✅    | ✅      | ✅          | ✅        |
+| rxjs               | ✅          | ❌       | *️⃣ 7 | ✅    | ✅      | ✅          | ✅        |
+
+*1: Reducer required  
+*2: All key shares same type  
+*3: Two step create, atom & store  
+*4: Proxy based, which means just like vue 3, has it's trace limitation.   
+*5: Heavy slice  
+*6: v8 may not play well with proxy  
+*7: Really heavy even with rxjs subject  
+*8: Need to use default store  
+
+## Detailed compares
 - redux
   - Toooooooooooo complex. To emit a state you have to create a new reducer, with a new store, a string store name...
 - mitt / nodejs `EventEmitter`
