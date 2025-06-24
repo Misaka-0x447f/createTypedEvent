@@ -7,9 +7,13 @@ English | [中文](https://github.com/Misaka-0x447f/createTypedEvent/wiki/%E4%B8
 A modern eventManager, bridging vanilla-js and reactive frameworks, with types to prevent errors.  
 Proven and well-tested in private projects.
 
+Project history on gist: https://gist.github.com/Misaka-0x447f/0c37018ae7bd944cbff54d27b6d4fd9f
+
 ## Compared to others
+- redux
+  - Toooooooooooo complex. To emit a state you have to create a new reducer, with a new store, a string store name, why.
 - rxjs
-  - Its Objective: requires you to create an Observable/Subject object.
+  - Its Objective: requires you to create an Observable/Subject object, with the "new" statement we hate.
   - Way much larger package size and more complex API.
 - mitt
   - Requires you to write event name just like node.js does: `emitter.on('xxx'...`
