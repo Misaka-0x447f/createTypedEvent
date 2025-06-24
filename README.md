@@ -4,8 +4,10 @@
 
 English | [中文](https://github.com/Misaka-0x447f/createTypedEvent/wiki/%E4%B8%AD%E6%96%87-README)
 
-A modern eventManager, bridging vanilla-js and reactive frameworks, with types to prevent errors.  
+**Typed, Autocomplete, One call unsubscribe.** A modern eventManager, with built-in react support.  
 Proven and well-tested in private projects.
+
+......And seriously, what's so bad about fly-wiring?
 
 Project history on gist: https://gist.github.com/Misaka-0x447f/0c37018ae7bd944cbff54d27b6d4fd9f
 
