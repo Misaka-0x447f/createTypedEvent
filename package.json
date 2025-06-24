@@ -57,8 +57,13 @@
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   },
-  "dependencies": {
-    "lodash-es": "^4.17.21"
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,9 @@
 import {createTypedEvent, TypedEvent} from "./index";
 import {Dispatch, SetStateAction, useCallback, useEffect, useMemo, useRef, useState} from "react";
-import {isFunction} from "lodash-es";
+
+const isFunction = (obj: any): obj is (...args: any) => any => {
+    return !!(obj && obj.constructor && obj.call && obj.apply);
+};
 
 // 临时直接嵌入 useHybridState 的实现，后续发包再改
 export const useHybridState = <T>(initialValue?: T) => {

@@ -1,6 +1,7 @@
 # create-typed-event
 
-[![npm version](https://img.shields.io/npm/v/@misaka17535/create-typed-event.svg)](https://www.npmjs.com/package/@misaka17535/create-typed-event)
+![NPM Version](https://img.shields.io/npm/v/%40misaka17535%2Fcreate-typed-event)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/%40misaka17535%2Fcreate-typed-event)
 
 [中文](https://github.com/Misaka-0x447f/createTypedEvent/wiki/%E4%B8%AD%E6%96%87-README) | English
 
