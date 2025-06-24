@@ -12,15 +12,17 @@ Project history on gist: https://gist.github.com/Misaka-0x447f/0c37018ae7bd944cb
 ## Compared to others
 - redux
   - Toooooooooooo complex. To emit a state you have to create a new reducer, with a new store, a string store name, why.
-- rxjs
-  - Its Objective: requires you to create an Observable/Subject object, with the "new" statement we hate.
-  - Way much larger package size and more complex API.
 - mitt
   - Requires you to write event name just like node.js does: `emitter.on('xxx'...`
   - Does not return an unsub method.
   - Does not support getting current value.
+- jotai
+  - To create a equivalent, you have to create an atom, then a store. And it requires user to create store every time user needs to subscribe.
 - valtio
   - A good solution, but powered by Proxy, which is not really efficient and not working with complex object.
+- rxjs
+  - Its Objective: requires you to create an Observable/Subject object, with the "new" statement we hate.
+  - Way much larger package size and more complex API.
 - so many others
   - Almost every library I know requires you to write event name on subscription, and cannot auto-complete.
   - So I trust the solution I made can be unique and useful.
