@@ -2,9 +2,10 @@
 
 [![npm version](https://img.shields.io/npm/v/@misaka17535/create-typed-event.svg)](https://www.npmjs.com/package/@misaka17535/create-typed-event)
 
-English | [中文](https://github.com/Misaka-0x447f/createTypedEvent/wiki/%E4%B8%AD%E6%96%87-README)
+[中文](https://github.com/Misaka-0x447f/createTypedEvent/wiki/%E4%B8%AD%E6%96%87-README) | English
 
-**Typed, Autocomplete, One call unsubscribe.** A modern eventManager, with built-in react support.  
+### **Typed, Autocomplete, One call unsubscribe, React is Optional. **  
+A simple eventManager, with built-in react support.  
 Proven and well-tested in private projects.
 
 ......And seriously, what's so bad about fly-wiring?
@@ -13,13 +14,14 @@ Project history on gist: https://gist.github.com/Misaka-0x447f/0c37018ae7bd944cb
 
 ## Compared to others
 - redux
-  - Toooooooooooo complex. To emit a state you have to create a new reducer, with a new store, a string store name, why.
-- mitt
-  - Requires you to write event name just like node.js does: `emitter.on('xxx'...`
+  - Toooooooooooo complex. To emit a state you have to create a new reducer, with a new store, a string store name...
+- mitt / nodejs `EventEmitter`
+  - Requires you to write event name just like node.js `EventEmitter`: `emitter.on('xxx'...`, which is not friendly to autocomplete. And why not put key in payload?
   - Does not return an unsub method.
   - Does not support getting current value.
 - jotai
   - To create a equivalent, you have to create an atom, then a store. And it requires user to create store every time user needs to subscribe.
+  - Does not support getting current value outside react context. See [jotai issue](https://github.com/pmndrs/jotai/discussions/2208)
 - valtio
   - A good solution, but powered by Proxy, which is not really efficient and not working with complex object.
 - rxjs
