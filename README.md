@@ -5,7 +5,7 @@
 
 [中文](https://github.com/Misaka-0x447f/createTypedEvent/wiki/%E4%B8%AD%E6%96%87-README) | English
 
-### **Typed, Autocomplete, One call unsubscribe, React is Optional. **  
+### Typed, Autocomplete, One call unsubscribe, React is Optional.   
 A simple eventManager, with built-in react support.  
 Proven and well-tested in private projects.
 
