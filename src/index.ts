@@ -46,7 +46,13 @@ export const createTypedEvent = <T = void>({
 } = {}) => {
     const history: T[] = initialValue ? [initialValue] : [];
     const cbs: Array<cb<T>> = [];
-    const instance = {
+    const instance: {
+        sub: (cb: cb<T>) => () => void;
+        unsub: (cb: cb<T>) => void;
+        dispatch: (payload: T) => void;
+        once: (cb: cb<T>) => () => void;
+        readonly value: T;
+    } = {
         sub: (cb: cb<T>) => {
             cbs.push(cb);
             if (dispatchLastValueOnSubscribe && history.length > 0) cb(history[0]);
